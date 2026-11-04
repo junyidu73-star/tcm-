@@ -1,0 +1,5 @@
+numpy>=1.24,<3
+scipy>=1.10,<2
+statsmodels>=0.14,<0.15
+pydeseq2==0.5.4
+certifi>=2024.2.2

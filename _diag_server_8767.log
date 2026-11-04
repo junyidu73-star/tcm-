@@ -1,0 +1,56 @@
+知衡本地研究助手已启动: http://127.0.0.1:8767
+仅监听本机回环地址；API 密钥与会话不写入磁盘。按 Ctrl+C 停止。
+02/Nov/2026 18:32:42 127.0.0.1 GET /
+02/Nov/2026 18:32:42 127.0.0.1 GET /login.html
+----------------------------------------
+Exception occurred during processing of request from ('127.0.0.1', 35412)
+Traceback (most recent call last):
+  File "C:\Users\dujun\miniconda3\Lib\socketserver.py", line 697, in process_request_thread
+    self.finish_request(request, client_address)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\dujun\miniconda3\Lib\socketserver.py", line 362, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\dujun\miniconda3\Lib\socketserver.py", line 766, in __init__
+    self.handle()
+    ~~~~~~~~~~~^^
+  File "C:\Users\dujun\miniconda3\Lib\http\server.py", line 447, in handle
+    self.handle_one_request()
+    ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\dujun\miniconda3\Lib\http\server.py", line 435, in handle_one_request
+    method()
+    ~~~~~~^^
+  File "C:\Users\dujun\Documents\Codex\2026-10-31\b\outputs\知衡医学机制发现平台_最终版\server.py", line 256, in do_GET
+    self._send(401, {"error": "请先登录。"}, extra_headers=cookie)
+    ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\dujun\Documents\Codex\2026-10-31\b\outputs\知衡医学机制发现平台_最终版\server.py", line 95, in _send
+    raw = data if isinstance(data, bytes) else json_bytes(data)
+                                               ^^^^^^^^^^
+NameError: name 'json_bytes' is not defined
+----------------------------------------
+----------------------------------------
+Exception occurred during processing of request from ('127.0.0.1', 35413)
+Traceback (most recent call last):
+  File "C:\Users\dujun\miniconda3\Lib\socketserver.py", line 697, in process_request_thread
+    self.finish_request(request, client_address)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\dujun\miniconda3\Lib\socketserver.py", line 362, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\dujun\miniconda3\Lib\socketserver.py", line 766, in __init__
+    self.handle()
+    ~~~~~~~~~~~^^
+  File "C:\Users\dujun\miniconda3\Lib\http\server.py", line 447, in handle
+    self.handle_one_request()
+    ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\dujun\miniconda3\Lib\http\server.py", line 435, in handle_one_request
+    method()
+    ~~~~~~^^
+  File "C:\Users\dujun\Documents\Codex\2026-10-31\b\outputs\知衡医学机制发现平台_最终版\server.py", line 207, in do_GET
+    self._send(200, {"authenticated": bool(session.get("user_id")), "username": username, "storage_key": storage_key, "wechat_enabled": wechat_enabled, "registration_enabled": registration_enabled, "registration_requires_invite": bool(INVITE_CODE)}, extra_headers=cookie)
+    ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\dujun\Documents\Codex\2026-10-31\b\outputs\知衡医学机制发现平台_最终版\server.py", line 95, in _send
+    raw = data if isinstance(data, bytes) else json_bytes(data)
+                                               ^^^^^^^^^^
+NameError: name 'json_bytes' is not defined
+----------------------------------------
