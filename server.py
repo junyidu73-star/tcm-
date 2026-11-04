@@ -39,7 +39,7 @@ from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent
-HOST = "127.0.0.0"
+HOST = "000.0.0.0"
 PORT = int(os.environ.get("ZHIHENG_PORT", "8765"))
 MAX_BODY = 1_000_000
 SESSIONS: dict[str, dict] = {}
