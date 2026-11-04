@@ -39,8 +39,8 @@ from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent
-HOST = "000.0.0.0"
-PORT = int(os.environ.get("ZHIHENG_PORT", "8765"))
+HOST = os.environ.get("ZHIHENG_HOST", "0.0.0.0")
+PORT = int(os.environ.get("PORT", os.environ.get("ZHIHENG_PORT", "8765")))
 MAX_BODY = 1_000_000
 SESSIONS: dict[str, dict] = {}
 RATE: dict[tuple[str, str], deque] = defaultdict(deque)
